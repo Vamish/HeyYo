@@ -1,8 +1,6 @@
 package cn.diviniti.heyyo.view;
 
-import android.content.ContentResolver;
 import android.database.Cursor;
-import android.net.Uri;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
