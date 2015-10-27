@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 final TextView phoneTv = (TextView) view.findViewById(R.id.user_phone_number);
                 new MaterialDialog.Builder(MainActivity.this)
                         .title("跟" + nameTv.getText() + "打个招呼")
-                        .content("测试用手机号：" + phoneTv.getText().toString().split(";")[0])
+//                        .content("测试用手机号：" + phoneTv.getText().toString().split(";")[0])
                         .positiveText("确认发送")
                         .positiveColor(getResources().getColor(R.color.colorPrimaryDark))
                         .negativeColor(getResources().getColor(R.color.colorPrimaryDark))
@@ -106,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
 
     protected void sendSMS(String phoneNumber) {
         SmsManager sms = SmsManager.getDefault();
+        MaterialDialog dialog = new MaterialDialog.Builder(MainActivity.this)
+                .title("发送中")
+                .progress(true, 0)
+                .show();
+
         sms.sendTextMessage(phoneNumber, null, "HeyYO!", null, null);
     }
 }
