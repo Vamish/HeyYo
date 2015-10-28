@@ -7,7 +7,7 @@
 3.点击想发送短信的联系人，弹出确认框   
 4.确认后发送   
 
-### 下载
+### 下载链接
 Android: [点击下载](https://github.com/Vamish/HeyYo/blob/master/app/heyyo!.apk?raw=true)   
 
 ### 启动
