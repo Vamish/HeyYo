@@ -30,6 +30,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import cn.diviniti.heyyo.R;
 import cn.diviniti.heyyo.model.ContactsList;
@@ -81,12 +83,21 @@ public class MainActivity extends AppCompatActivity {
 
     protected void sendSMS(String phoneNumber) {
         SmsManager sms = SmsManager.getDefault();
-        MaterialDialog dialog = new MaterialDialog.Builder(MainActivity.this)
+        final MaterialDialog dialog = new MaterialDialog.Builder(MainActivity.this)
                 .title("发送中")
                 .progress(true, 0)
                 .show();
 
         sms.sendTextMessage(phoneNumber, null, "HeyYO!", null, null);
+
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                dialog.dismiss();
+            }
+        };
+        timer.schedule(task, 4000);
     }
 
     @Override
