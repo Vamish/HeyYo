@@ -8,4 +8,4 @@
 4.确认后发送   
 
 ### 启动
-![alt ScreenShot]("images/heyyo.png")
+![alt ScreenShot](images/heyyo.png)
