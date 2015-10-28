@@ -8,7 +8,7 @@
 4.确认后发送   
 
 ### 下载
-![](app/heyyo!.apk)   
+![点击下载](app/heyyo!.apk)   
 
 ### 启动
-![alt ScreenShot](images/heyyo.png)
+![HeyYo! ScreenShot](images/heyyo.png)
