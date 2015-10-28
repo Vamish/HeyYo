@@ -8,7 +8,7 @@
 4.确认后发送   
 
 ### 下载
-Android: [点击下载](app/heyyo!.apk)   
+Android: [点击下载](https://github.com/Vamish/HeyYo/blob/master/app/heyyo!.apk?raw=true)   
 
 ### 启动
 ![HeyYo! ScreenShot](images/heyyo.png)
