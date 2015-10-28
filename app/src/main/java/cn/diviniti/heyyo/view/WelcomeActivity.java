@@ -20,7 +20,6 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        final Bundle bundle = new Bundle();
         final ContactsList list = new ContactsList();
 
         Timer timer = new Timer();
@@ -35,6 +34,6 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         };
 
-        timer.schedule(task, 2000);
+        timer.schedule(task, 1000);
     }
 }
