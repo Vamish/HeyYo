@@ -7,5 +7,8 @@
 3.点击想发送短信的联系人，弹出确认框   
 4.确认后发送   
 
+### 下载
+![](app/heyyo!.apk)   
+
 ### 启动
 ![alt ScreenShot](images/heyyo.png)
