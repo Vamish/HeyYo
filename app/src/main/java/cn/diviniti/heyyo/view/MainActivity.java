@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.github.promeg.pinyinhelper.Pinyin;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -97,17 +98,17 @@ public class MainActivity extends AppCompatActivity {
             }
             if (!"".equals(phones.trim())) {
                 contact.put("name", display_name);
-//                contact.put("pinyin", this.toPinYin(cursor.getString(1)));
+                contact.put("pinyin", Pinyin.toPinyin(display_name.toCharArray()[0]));
                 contact.put("phones", phones);
                 contact.put("ID", contactID);
                 contactsList.add(contact);
             }
-//            Collections.sort(contactsList, new Comparator<Map<String, Object>>() {
-//                @Override
-//                public int compare(Map<String, Object> lhs, Map<String, Object> rhs) {
-//                    return ((String) lhs.get("pinyin")).compareTo((String) rhs.get("pinyin"));
-//                }
-//            });
+            Collections.sort(contactsList, new Comparator<Map<String, Object>>() {
+                @Override
+                public int compare(Map<String, Object> lhs, Map<String, Object> rhs) {
+                    return ((String) lhs.get("pinyin")).compareTo((String) rhs.get("pinyin"));
+                }
+            });
         }
 
         return contactsList;
@@ -123,31 +124,4 @@ public class MainActivity extends AppCompatActivity {
         sms.sendTextMessage(phoneNumber, null, "HeyYO!", null, null);
     }
 
-    /*
-    public String toPinYin(String hanzis)// 获取汉语拼音
-    {
-        // System.out.println("转换前的中文为：" + hanzis);
-        String pinyinString = "";
-        char[] charArray = hanzis.trim().toCharArray();
-        // 根据需要定制输出格式，用默认的即可
-        HanyuPinyinOutputFormat defaultFormat = new HanyuPinyinOutputFormat();
-        try {
-            // 遍历数组，ASC码大于128进行转换
-            for (int i = 0; i < charArray.length; i++) {
-                if (charArray[i] > 128) {
-                    // System.out.println(charArray[i]+"->"+PinyinHelper.toHanyuPinyinStringArray(charArray[i],
-                    // defaultFormat)+"=="+PinyinHelper.toHanyuPinyinStringArray(charArray[i],
-                    // defaultFormat)[0]);
-                    pinyinString += PinyinHelper.toHanyuPinyinStringArray(charArray[i], defaultFormat)[0];
-                } else {
-                    pinyinString += charArray[i];
-                }
-            }
-        } catch (BadHanyuPinyinOutputFormatCombination e) {
-            e.printStackTrace();
-            //System.out.println(e.toString());
-        }
-        // System.out.println("转换后的拼音为：" + pinyinString);
-        return pinyinString.trim();
-    }*/
 }
